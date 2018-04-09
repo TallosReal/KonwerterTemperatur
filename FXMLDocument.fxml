@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="konwertertemperatur.FXMLDocumentController">
+   <center>
+      <HBox id="mainbox" alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="200.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label nodeOrientation="RIGHT_TO_LEFT" prefHeight="17.0" text="Temperatura wejściowa" />
+                  <TextField fx:id="wejSt" style="-fx-alignment: center;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <RadioButton fx:id="wejCel" mnemonicParsing="false" onAction="#konwertujTemperature" text="Celsius">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="wejSk" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="wejFahr" mnemonicParsing="false" onAction="#konwertujTemperature" text="Fahrenheit" toggleGroup="$wejSk">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="wejKel" mnemonicParsing="false" onAction="#konwertujTemperature" text="Kelvin" toggleGroup="$wejSk" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT" minHeight="100.0">
+               <children>
+                  <Label nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" text="Temperatura wyjściowa" textAlignment="RIGHT" />
+                  <TextField fx:id="wyjSt" disable="true" style="-fx-alignment: center;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <RadioButton fx:id="wyjCel" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#konwertujTemperature" text="Celsius">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="wyjSk" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="wyjFahr" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#konwertujTemperature" text="Fahrenheit" toggleGroup="$wyjSk">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="wyjKel" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#konwertujTemperature" text="Kelvin" toggleGroup="$wyjSk" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
